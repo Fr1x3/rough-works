@@ -1,7 +1,7 @@
 const periods = {
-    daily: 'Daily',
-    weekly: 'Weekly',
-    monthly: 'Monthly',
+    daily: 'daily',
+    weekly: 'weekly',
+    monthly: 'monthly',
 }
 
 
