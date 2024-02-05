@@ -13,10 +13,10 @@ function Card({ period }){
                 <div className='w-15 h-15 absolute right-4 -mt-1 overflow-hidden'>
                 <img src={item.icon} alt='background icon' />
                 </div>
-                <div className=' h-3/4 w-full gap-1 rounded-lg absolute bottom-0  bg-dark-blue flex flex-col p-4 items-center'>
+                <div className=' h-3/4 w-full gap-1 rounded-lg absolute bottom-0  bg-dark-blue hover:bg-desaturated-blue flex flex-col p-4 items-center'>
                     <div className='flex items-center w-full justify-between'>
                         <p className='text-lg text-white'>{item.title}</p>
-                        <img src={elipse} alt='more info' className='w-3' />
+                        <img src={elipse} alt='more info' className='w-3 hover:text-white' />
                     </div>
                     <div className='  flex items-center w-full justify-between lg:flex-col lg:items-start'>
                         

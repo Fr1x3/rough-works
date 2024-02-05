@@ -13,13 +13,13 @@ function ProfileCard({
                 </div>
                 <div className='text-pale-blue'>
                     <p className='text-sm'>Report for</p>
-                    <p className='text-2xl text-white text-wrap'>Jeremy Robson</p>
+                    <p className='text-xl text-white text-wrap'>Jeremy Robson</p>
                 </div>
             </div>
             <div className='flex justify-evenly py-3 px-1 text-desaturated-blue capitalize lg:flex-col lg:items-start lg:pl-5 '>
-                <button className={`${periods.daily === period ? 'text-white': ''} capitalize`} onClick={() =>handleClick(periods.daily)}>{periods.daily}</button>
-                <button className={`${periods.weekly === period ? 'text-white': ''} capitalize`} onClick={() => handleClick(periods.weekly)}>{periods.weekly}</button>
-                <button className={`${periods.monthly === period ? 'text-white': ''} capitalize`} onClick={() => handleClick(periods.monthly)}>{periods.monthly}</button>
+                <button className={`${periods.daily === period ? 'text-white': ''} capitalize hover:text-white`} onClick={() =>handleClick(periods.daily)}>{periods.daily}</button>
+                <button className={`${periods.weekly === period ? 'text-white': ''} capitalize hover:text-white`} onClick={() => handleClick(periods.weekly)}>{periods.weekly}</button>
+                <button className={`${periods.monthly === period ? 'text-white': ''} capitalize hover:text-white`} onClick={() => handleClick(periods.monthly)}>{periods.monthly}</button>
             </div>
         </div>
     )
