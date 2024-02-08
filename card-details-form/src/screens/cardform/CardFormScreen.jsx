@@ -1,9 +1,11 @@
 import Input from "../../components/input/Input"
 
-function CardFormScreen(){
+function CardFormScreen({
+    handleSubmit
+}){
     return(
         <div className="py-6 px-4">
-            <form className="flex flex-col gap-4 h-full justify-center">
+            <form className="flex flex-col gap-4 h-full justify-center" onSubmit={() => handleSubmit(true)}>
                 <div className="flex flex-col gap-3">
                     <Input 
                         label="cardholder name"
