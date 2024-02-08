@@ -1,9 +1,12 @@
+import CardFormScreen from "./screens/cardform/CardFormScreen"
+import HeaderScreen from "./screens/header/HeaderScreen"
 
 function App() {
 
   return (
-    <div className="text-4xl bg-red-400">
-      ehat are you doing here
+    <div className="min-h-screen grid grid-rows-[2fr_3fr] text-lg">
+      <HeaderScreen />
+      <CardFormScreen />
     </div>
   )
 }
