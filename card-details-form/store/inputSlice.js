@@ -20,7 +20,7 @@ export const inputSlice = createSlice({
     initialState,
     reducers: {
         setInputValue: (state, action) => {
-            console.log(state)
+            
             const {inputName, value} = action.payload
             state[inputName] = value
         },
