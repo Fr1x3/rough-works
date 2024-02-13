@@ -4,7 +4,7 @@ import { setInputValue, selectInputValues, setErrors } from "../../../store/inpu
 
 
 function CardFormScreen({
-    handleSubmit
+    handleNav
 }){
 
     const dispatch = useDispatch()
@@ -42,11 +42,9 @@ function CardFormScreen({
         
     }
 
-    console.log(inputValues.errors)
-
     return(
         <div className="py-6 px-4">
-            <form className="flex flex-col gap-4 h-full lg:mx-auto justify-center lg:w-1/2" onSubmit={() => handleSubmit(true)}>
+            <form className="flex flex-col gap-4 h-full lg:mx-auto justify-center lg:w-1/2" onSubmit={handleNav}>
                 <div className="flex flex-col gap-3">
                     <Input 
                         name='cardHolderName'

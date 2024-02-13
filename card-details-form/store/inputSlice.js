@@ -28,6 +28,9 @@ export const inputSlice = createSlice({
             const { name, errorMessage } = action.payload
             console.log(errorMessage)
             state.errors[name] = errorMessage
+        },
+        reset: () => {
+            return initialState
         }
     }
 })
