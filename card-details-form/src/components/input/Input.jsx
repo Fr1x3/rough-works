@@ -1,17 +1,25 @@
 function Input({
+    name,
     label="",
     placeholder="",
+    value,
+    error,
+    maxLength,
+    onChange = () => {}
 }){
     return(
         <div>
-            <label htmlFor="cardHolderName" className="font-semibold uppercase text-[hsl(278,68%,11%)]">
+            <label htmlFor="cardHolderName">
                 {label}
             </label>
             <input 
-                name="cardHolderName"
+                maxLength={maxLength}
+                name={name}
                 type="text" 
                 placeholder={placeholder}
-                className="mt-1 placeholder-[hsl(270,3%,87%)] w-full rounded-lg border border-[hsl(270,3%,87%] py-1 px-2"
+                value={value}
+                onChange={onChange}
+                className={`${error ? 'border-2 border-[hsl(0,100%,66%)]' : ''}`}
             />
         </div>
     )
