@@ -6,7 +6,7 @@ function App() {
 
   return (
    <div className='bg-off-white h-screen w-full px-8'>
-    <div className="bg-white rounded-2xl rounded-br-[5rem] px-4 py-10 grid gap-4 grid-rows-[1fr_1fr_4fr]">
+    <div className="bg-white rounded-2xl rounded-br-[5rem] px-4 py-10 grid gap-4 grid-rows-[1fr_1fr_2fr]">
       <DateInput />
       <Button />
       <Result />
