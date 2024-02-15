@@ -33,7 +33,7 @@ function Button(){
             <div className="h-[2px] w-full bg-light-grey absolute top-[calc(50%_-_1px)]"/>
             <button 
                 onClick={handleOnClick}
-                className="h-12 w-12 rounded-full bg-purple flex justify-center items-center right-[calc(50%_-_1.5rem)] top-[calc(50%_-_1.5rem)] absolute z-10"
+                className="h-12 w-12 rounded-full bg-purple flex justify-center items-center right-[calc(50%_-_1.5rem)] top-[calc(50%_-_1.5rem)] absolute z-10 lg:right-0"
             >
                 <img src={ArrowIcon} alt="arrow down icon" className='h-1/2 w-1/2'/>
             </button>
