@@ -10,5 +10,6 @@
 @layer {
     body {
         font-family: 'League Spartan', 'Times New Roman', Times, serif;
+        @apply text-base
     }
 }

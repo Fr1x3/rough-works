@@ -1,8 +1,16 @@
+import { bgHeaderMobileIcon } from "./utils/icons";
+import ContentSection from "./components/ui/ContentSection";
 
 function App() {
 
   return (
-   <div className="text-4xl font-semibold h-screen bg-red-400"> heello there</div>
+   <main className="m-h-screen w-full">
+    <header className="w-full h-[150px] bg-very-dark-cyan relative">
+      <img src={bgHeaderMobileIcon} alt="background image" className="w-full h-full" />
+      <div className="h-full w-full absolute inset-0 bg-desaturated-cyan  opacity-75"/>
+    </header>
+    <ContentSection />
+   </main>
   )
 }
 
