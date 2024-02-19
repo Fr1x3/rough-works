@@ -4,7 +4,7 @@ import Pills from "../Pills"
 
 type JobCardProp = {
     jobDetails: JobData,
-    selectFilterCategories: () => void
+    selectFilterCategories: (category: string) => void
 }
 
 function JobCard({ jobDetails, selectFilterCategories } : JobCardProp){
@@ -34,12 +34,12 @@ function JobCard({ jobDetails, selectFilterCategories } : JobCardProp){
                 { jobDetails.level && <Pills title={jobDetails.level} handleSelected={ selectFilterCategories} /> }
                 { jobDetails.languages && 
                     jobDetails.languages.map( 
-                        language => <Pills title={language} handleSelected={ selectFilterCategories} />
+                        language => <Pills title={language} handleSelected={ selectFilterCategories} key={language} />
                     )
                 }
                 { jobDetails.tools && 
                     jobDetails.tools.map( 
-                        tool => <Pills title={tool}  handleSelected={ selectFilterCategories}/>
+                        tool => <Pills title={tool}  handleSelected={ selectFilterCategories} key={tool}/>
                     )
                 }
             </div>

@@ -19,9 +19,10 @@ function ContentSection(){
     }
 
     function handleAddFilterCategory(category: string){
-        console.log(category)
+        // ensure the category does not currently exist
+        if(filterCategories.find(cat => cat === category)) return
         setFilterCategories([...filterCategories, category])
-        console.log(filterCategories)
+        
     }
 
     if(isLoading){
