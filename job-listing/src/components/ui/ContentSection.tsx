@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Filter from "./Filter"
 import useFetchJobList from "../../hooks/useFetchJobList"
 import JobCard from "./JobCard"
@@ -6,7 +6,8 @@ import useFilterJobList from "../../hooks/useFilterJobList"
 
 
 function ContentSection(){
-    const [filterCategories, setFilterCategories] = useState< string[]>(['Frontend']) 
+    const [filterCategories, setFilterCategories] = useState< string[]>([]) 
+    const [activeCard, setActiveCard] = useState<number[]>([])
 
     const { jobListData, isLoading } = useFetchJobList()
     
@@ -23,6 +24,14 @@ function ContentSection(){
         // ensure the category does not currently exist
         if(filterCategories.find(cat => cat === category)) return
         setFilterCategories([...filterCategories, category])    
+    }
+
+    function handleCardSelected(id: number){
+        if( activeCard.includes(id)){
+            setActiveCard(activeCard.filter( cardId => cardId !== id))
+        } else
+            setActiveCard([...activeCard, id])
+        
     }
 
     const filterJobData  = useFilterJobList(jobListData, filterCategories)
@@ -43,7 +52,12 @@ function ContentSection(){
             <div className={`flex flex-col gap-10 lg:gap-6 mt-10 lg:items-center`}>
                 {
                     filterJobData && filterJobData.map( jobData => {
-                        return <JobCard jobDetails={jobData} key={jobData.id} selectFilterCategories={handleAddFilterCategory}/>
+                        return <JobCard jobDetails={jobData} 
+                            key={jobData.id} 
+                            selectFilterCategories={handleAddFilterCategory} 
+                            isActive={activeCard.includes(jobData.id)}
+                            handleClick={handleCardSelected}
+                            />
                     })
                 }
             </div>

@@ -21,7 +21,7 @@ function Filter({
                             <span className="m-2 font-bold text-desaturated-cyan">{category}</span>
                             <button 
                                 onClick={() => onRemoveCategory(category)}
-                                className="w-7 h-7 bg-desaturated-cyan p-2 rounded-e">
+                                className="w-7 h-7 bg-desaturated-cyan p-2 rounded-e hover:bg-very-dark-cyan">
                                 <img src={removeIcon} alt="remove icon" loading="lazy" className="w-full h-full" />
                             </button>
                         </div>
@@ -30,7 +30,7 @@ function Filter({
             </div>
             <button
                 onClick={reset}
-                className="font-bold text-dark-cyan"
+                className="font-bold text-dark-cyan hover:underline hover:text-desaturated-cyan"
             >
                 Clear
             </button>
