@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Filter from "./Filter"
 import useFetchJobList from "../../hooks/useFetchJobList"
 import JobCard from "./JobCard"
+import useFilterJobList from "../../hooks/useFilterJobList"
 
 
 function ContentSection(){
@@ -21,9 +22,10 @@ function ContentSection(){
     function handleAddFilterCategory(category: string){
         // ensure the category does not currently exist
         if(filterCategories.find(cat => cat === category)) return
-        setFilterCategories([...filterCategories, category])
-        
+        setFilterCategories([...filterCategories, category])    
     }
+
+    const filterJobData  = useFilterJobList(jobListData, filterCategories)
 
     if(isLoading){
         <div>Loading...</div>
@@ -40,7 +42,7 @@ function ContentSection(){
             }
             <div className={`flex flex-col gap-10 lg:gap-6 mt-10 lg:items-center`}>
                 {
-                    jobListData && jobListData.map( jobData => {
+                    filterJobData && filterJobData.map( jobData => {
                         return <JobCard jobDetails={jobData} key={jobData.id} selectFilterCategories={handleAddFilterCategory}/>
                     })
                 }
